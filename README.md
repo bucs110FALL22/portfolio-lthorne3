@@ -14,4 +14,4 @@ Preferred Name: Lily Thorne
 
 Discord username: Lillian Thorne
 
-REPL url: https://replit.com/@LillianThorne
+REPL url: [https://replit.com/@LillianThorne](https://replit.com/@LillianThorne)
