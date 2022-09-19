@@ -1,6 +1,6 @@
 import random
 
-rando = random.randint(0, 9)
+rando = random.randint(1, 9)
 
 for i in range(3):
     guesser = int(input("Guess a number 1-10: "))
