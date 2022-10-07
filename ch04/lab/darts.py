@@ -2,22 +2,31 @@ import pygame
 import math
 import random 
 
-pygame.FULLSCREEN
+#PART A
 pygame.init()
 black= [0, 0, 0]
 lightblue= [173, 216, 230]
 pink= [255, 182, 193]
-
 width=700
 height=400
-screen=pygame.display.set_mode([width, height])
+window=pygame.display.set_mode([width, height])
+window.fill(lightblue)
 
-#pygame.display.fill(blue)
-pygame.draw.line(screen, black, ((width())/2,0), ((width)/2, height))
-pygame.draw.line(screen, black, (0,(height)/2),(width, (height)/2)
-pygame.draw.circle(screen, pink, (350,200), math.hypot(350, (200-0), 1)
+pygame.draw.line(window, black, (350,0), (350, 400))
+pygame.draw.line(window, black, (0,200),(700, 200))
+pygame.draw.circle(window, pink, [350, 200], 170, 0)
+pygame.draw.rect(window, (0, 0, 255), [100, 100, 400, 100], 2)
+
+#PART B
+x= random.randrange(700)
+y= random.randrange(400)
+dartPos= (x,y)
+pygame.draw.circle(window, black, [x,y], 2, 0)
+distance_from_center = math.hypot(x-350, y-200) 
+is_in_circle = distance_from_center <= width/2 
+
+
+window.exitonclick
 
 
 
-pygame.display.flip()
-pygame.window.exitonclick()
