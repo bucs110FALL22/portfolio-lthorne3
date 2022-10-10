@@ -3,26 +3,36 @@ import random
 
 franklin = turtle.Turtle()
 window = turtle.Screen()
-window.screensize(400,400)
+window.screensize(800,800)
 franklin.shape("turtle")
 franklin.color("purple")
 on_screen= window.turtles() 
+isInScreen= True
 
-def isInScreen(window, franklin):
-    if random.random() > 0.1:
-        return True
-    else:
-        return False
 
-while isInScreen(window, franklin):
-  coin = random.randint(1, 2)
+
+while isInScreen :
+  coin = random.randrange(1, 3)
   if coin == 1:
     print('Heads')
-    turtle.left(90)
+    franklin.color("green")
+    franklin.left(90)
+    franklin.forward(50)
   if coin == 2:
     print ('Tails')
-    turtle.right(90)
-  turtle.forward(50)
+    franklin.color("yellow")
+    franklin.right(90)
+    franklin.forward(50)
 
+  
+  turtleX = franklin.xcor()
+  turtleY = franklin.ycor()
+  x_range = window.window_width()/2
+  y_range = window.window_height()/2
+
+    
+  if abs(turtleX) > x_range or abs(turtleY) > y_range:
+    isInScreen = False
+    break
 
 window.exitonclick()

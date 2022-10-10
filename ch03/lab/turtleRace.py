@@ -58,4 +58,4 @@ for i in range(5):
   window.fill
 
 
-pygame.window.exitonclick()
+pygame.time.wait(500)
