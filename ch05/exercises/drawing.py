@@ -4,10 +4,11 @@ window=turtle.Screen()
 t= turtle.Turtle()
 t.shape("turtle")
 t.color("green")
-num_sides= int(input("How many sides? "))
-side_length= int(input("How long is each side? "))
+#lines 7 & 8 needed to ask for user input but not needed when the function has parameters
+#num_sides= int(input("How many sides? "))
+#side_length= int(input("How long is each side? "))
 
-def drawEqShape():
+def drawEqShape(num_sides, side_length):
   t
   num_sides
   side_length
@@ -17,4 +18,4 @@ def drawEqShape():
     t.left(i)
   window.exitonclick()
 
-drawEqShape()
+drawEqShape(4, 25)
