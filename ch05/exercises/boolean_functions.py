@@ -19,6 +19,8 @@ def is_passing(letter=None):
   else:
     return False
 
+  #also works: return letter in "ABC", returns a boolean
+
 is_passing(letter)
 
 if is_passing(letter)==True:
