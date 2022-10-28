@@ -1,9 +1,6 @@
 import turtle
 import random
 
-#night sky- draw background and fill 
-#draw stars maybe fill?
-#moon- draw on filled moon color circle and one a little to the left of it that bg colored to make a crescent
 
 t=turtle.Turtle()
 window=turtle.Screen()
