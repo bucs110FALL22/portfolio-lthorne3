@@ -1,31 +1,28 @@
 import time
 
 class Animal:
-  def __init__ (self, name, animal):
+  def __init__ (self, name, type):
     self.name= name
-    self.animal= animal
-    self.date= date
+    self.type= type
+    self.id= time.strftime("%d%m%M%S")
+    self.arrived= time.strftime("%d/%m/%Y")
+    self.adopted= None               
   
-  def getName(self):
-    return self.name
-
-  def getAnimal(self):
-    return self.animal
-
-  def getId(self):
-    return id(self)
-
   def setAdopted(self):
-    return true
+    self.adopted= time.strftime("%d/%m/%Y")
 
-  def getDate(self):
-    return date(self)
-  
-
+  def __str__(self):
+    result_str= f"{self.name}[{self.type}]"
+    result_str+= f"\nArrived: {self.arrived}"
+    result_str+= f"\nAdopted: {self.adopted}"
+    return result_str
     
-  def main():
-    scout= Animal("Scout", "dog", 1234)
-    scout.setAdopted()
-    print(id(scout))
+def main():
+  scout= Animal("Scout", "dog")
+  scout.setAdopted()
+  buddy=Animal("Buddy", "cat")
+  buddy.setAdopted()
+  print(scout)
+  print(buddy)
 
-  main()
+main()
