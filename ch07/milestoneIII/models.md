@@ -27,7 +27,47 @@ Remember, this is to get you thinking and help me guide you. Nothing is set in s
 
 Using the example below, list each model class and its interface
 
-1. < Class Name > 
+1. < Class Enemy > 
     * __init__
         * < description >
     * < additional methods >
+
+1. class Enemy(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__(self)
+        self.health = 2
+        self.x= x
+        self.y= y
+        self.image = pygame.image.load("assets/enemy.png")
+        self.rect = self.image.get_rect()
+        self.speed = Random.randrange(1,5)
+
+    def generate(self, x, y):
+        '''puts the enemy in a randomly generated position'''
+        self.x= Random.randrange(#width of the maze)
+        self.y= Random.randrange(#height of the maze)
+
+    def move(self, x, y):
+        '''enemy moes back and forth within the maze (like pacman)'''
+        while #pos of enemy is not touching a wall of the maze:
+           self.x= self.x-10 #or to wherever a wall is
+           self.x= self.x+10 #back to starting
+   
+    def die(self, x, y):
+       '''if enemy and player come into contact, enemy dies, might belong better in the player class so could be changed later'''
+        if enemy.x=player.x and enemy.y=player.y:
+          self.image= None
+
+
+3. class Wall():
+    def __init__(self):
+        self.x= x
+        self.y= y
+        self.width= w
+        self.height= h
+        self.rect= pygame.Rect(self.x, self.y, self.height, self.width)
+
+    def makeWall(self, display, color):
+        pygame.draw.rect(display, color, self.rect)
+        pygame.display.flip()
+   
