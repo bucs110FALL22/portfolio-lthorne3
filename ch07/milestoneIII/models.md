@@ -59,7 +59,7 @@ Using the example below, list each model class and its interface
           self.image= None
 
 
-3. class Wall():
+3. class Walls():
     def __init__(self):
         self.x= x
         self.y= y
