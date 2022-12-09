@@ -18,7 +18,7 @@ michelangelo.up() # 4. Pick up the pen so we don’t get lines
 leonardo.up()
 michelangelo.goto(-100,20)
 leonardo.goto(-100,-20)
-window.exitonclick()
+
 
 ## 5. Your PART A code goes here
 for i in range(10):
@@ -26,6 +26,9 @@ for i in range(10):
   turtle.time.wait(500)
   leonardo.forward(random.randrange(0,11))
   turtle.time.wait(500)
+
+
+
 
 # PART B - complete part B here
 pygame.init()
@@ -37,14 +40,13 @@ BLUE =  (  0,   0, 255)
 GREEN = (  0, 255,   0)
 RED =   (255,   0,   0)
 
-
-
+color= {BLACK, WHITE, BLUE, GREEN, RED}
 
 for i in range(5):
   num_sides= int(input("How many sides: "))
   side_length= int(input("How long is each side: " ))
   offset= int(input("How far from top corner: "))
-  shape_color= color(input("What color)"))
+  shape_color= color(input("What color"))
   coords=[]
   for j in range(side_length):
     theta = (2.0 * math.pi * i) / num_sides
@@ -59,3 +61,4 @@ for i in range(5):
 
 
 pygame.time.wait(500)
+window.exitonclick()

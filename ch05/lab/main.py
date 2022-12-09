@@ -1,45 +1,43 @@
-import pygame
+#import pygame
 
 coords = []
 n=None
 count=None
 max_so_far=None
-upper_limit=200
 
 
-def foo(n):
-    count = 0
-    max_so_far = count 
+
+def foo():
+  count = 0      
+  upper_limit= 10
+  iters= {}
+  start= 2
+  max_so_far=count
+  for n in range(start, upper_limit):
     while n != 1:
-        coords.append([n, count])
-        print(n, end=', ')
-        if n % 2 == 0:
-            n = n // 2
-            count += 1
-        else:
-            n = n * 3 + 1
-            count += 1
-
-      
-    print(n, end='. ')
-    print("count =", count)
-    if count > max_so_far:
-        max_so_far = count
-    for i in [coords]:
-      if coords[i]>coords[i+1]:
-        max_val= coords[i+1]
-    iters = {
-        n: count
-    }
-    scale=5
-    display = pygame.display.set_mode()
-    display.set_colorkey("white")
-    pygame.draw.lines(display, "black", False, coords*5)
-    new_display = pygame.transform.flip(display, False, True)
-    display.blit(new_display, (0, 0))
-    font = pygame.font.Font(None, 10)
-    msg = font.render("msg", False, "white")
-    display.blit(msg, (10, 10))
+      if n % 2 == 0:
+        n = n // 2
+        count += 1
+      else:
+        n = n * 3 + 1
+        count += 1     
+      if count> max_so_far:
+        max_so_far=count
+      iters.update({n : count})
+  print(iters)
+  print("Max num of iterations: ", max_so_far)
+          
+  # scale=5
+  # pygamae.init()
+  # display = pygame.display.set_mode()
+  # display.set_colorkey("white")
+  # pygame.draw.lines(display, "black", False, {iters})
+  # new_display = pygame.transform.flip(display, False, True)
+  # display.blit(new_display, (0, 0))
+  # font_name= None
+  # font = pygame.font.init(font_name, 10)
+  # msg = font.render(f"Max # of iterations: {max_so_far}", False, "white")
+  # display.blit(msg, (10, 10))
 
 
-foo(10)
+foo()
