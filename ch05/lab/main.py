@@ -30,20 +30,26 @@ def foo():
           
 
   scale=10
+  for j in iters:
+    iters[j]= iters[j]*scale
+    j=j*scale
+  iters[n]= count
   coords= list(iters.items())
   pygame.init()
   display = pygame.display.set_mode()
   display.set_colorkey("white")
   new_display = pygame.transform.flip(display, False, True)
   display.blit(new_display, (0,0))
-  pygame.draw.lines(display, "red", False, coords*scale)
+  pygame.draw.lines(display, "white", False, coords)
   font_name= None
   pygame.font.init()
-  font= pygame.font.Font(font_name, 30)
+  font= pygame.font.Font(font_name, 20)
   msg = font.render(f"Max # of iterations: {max_so_far}", False, "white")
   display.blit(msg, (0,200))
   pygame.display.flip()
-  pygame.display.exitonclick()
+  pygame.time.wait(2000)
+ 
+
 
 
 foo()
